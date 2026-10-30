@@ -18,9 +18,10 @@ extern uint16_t buffer[HEIGHT][WIDTH];
 extern spi_device_handle_t display_handle;
 
 void display_init(void);
-void display_draw(int, int, int, int, uint16_t);
+void display_draw(int16_t x, int16_t y, int16_t width, int16_t height, uint16_t color);
+void display_draw_text(const char *text, int16_t x, int16_t y, uint16_t color);
 void display_write_buffer(void);
-void display_send_cmd(uint8_t);
-void display_send_data(uint8_t *, uint16_t);
+void display_send_cmd(uint8_t cmd);
+void display_send_data(uint8_t *data, uint16_t size);
 
 #endif
